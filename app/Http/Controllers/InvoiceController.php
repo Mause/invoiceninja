@@ -185,6 +185,10 @@ class InvoiceController extends BaseController
      *      @OA\Parameter(ref="#/components/parameters/X-Api-Token"),
      *      @OA\Parameter(ref="#/components/parameters/X-Requested-With"),
      *      @OA\Parameter(ref="#/components/parameters/include"),
+     *      @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent(ref="#/components/schemas/Invoice")
+     *      ),
      *      @OA\Response(
      *          response=200,
      *          description="Returns the saved invoice object",
@@ -363,6 +367,16 @@ class InvoiceController extends BaseController
      *              type="string",
      *              format="string",
      *          ),
+     *      ),
+     *      @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent(
+     *              name="PartialInvoice",
+     *              allOf=@OA\Schema(
+     *                  @OA\Schema(ref="#/components/schemas/Invoice")
+     *                  @OA\Schema(type="object", required=[])
+     *              )
+     *          )
      *      ),
      *      @OA\Response(
      *          response=200,
