@@ -373,7 +373,7 @@ class InvoiceController extends BaseController
      *          @OA\JsonContent(
      *              name="PartialInvoice",
      *              allOf=@OA\Schema(
-     *                  @OA\Schema(ref="#/components/schemas/Invoice")
+     *                  @OA\Schema(ref="#/components/schemas/Invoice"),
      *                  @OA\Schema(type="object", required=[])
      *              )
      *          )
